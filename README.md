@@ -61,13 +61,13 @@ WHERE
 
 ## 💡 Business Problem Statements & Insights
 
-### 📌 Q1: Retrieve all sales on a specific date
+### 📌Retrieve all sales on a specific date
 
 ```sql
 SELECT * FROM retail_sales WHERE sale_date = '2022-11-05';
 ```
 
-### 📌 Q2: Clothing sales with quantity > 4 in November 2022
+### 📌Clothing sales with quantity > 4 in November 2022
 
 ```sql
 SELECT * FROM retail_sales
@@ -76,7 +76,7 @@ WHERE category = 'Clothing'
   AND quantity >= 4;
 ```
 
-### 📌 Q3: Total sales and order count per category
+### 📌Total sales and order count per category
 
 ```sql
 SELECT category, SUM(total_sale) AS Net_Sale, COUNT(*) AS Total_Orders
@@ -84,7 +84,7 @@ FROM retail_sales
 GROUP BY category;
 ```
 
-### 📌 Q4: Average age of customers in 'Beauty' category
+### 📌Average age of customers in 'Beauty' category
 
 ```sql
 SELECT ROUND(AVG(age)) AS avg_age
@@ -92,14 +92,14 @@ FROM retail_sales
 WHERE category = 'Beauty';
 ```
 
-### 📌 Q5: High-value transactions (sales > 1000)
+### 📌High-value transactions (sales > 1000)
 
 ```sql
 SELECT * FROM retail_sales
 WHERE total_sale > 1000;
 ```
 
-### 📌 Q6: Transactions by gender and category
+### 📌Transactions by gender and category
 
 ```sql
 SELECT category, gender, COUNT(*) AS Total_Transactions
@@ -108,7 +108,7 @@ GROUP BY category, gender
 ORDER BY category;
 ```
 
-### 📌 Q7: Best-selling month in each year by average sales
+### 📌Best-selling month in each year by average sales
 
 ```sql
 SELECT year, month, avg_sale
@@ -124,7 +124,7 @@ FROM (
 WHERE rank = 1;
 ```
 
-### 📌 Q8: Top 5 customers by total purchase value
+### 📌Top 5 customers by total purchase value
 
 ```sql
 SELECT customer_id, SUM(total_sale) AS Total_Sales
@@ -134,7 +134,7 @@ ORDER BY Total_Sales DESC
 LIMIT 5;
 ```
 
-### 📌 Q9: Unique customers per product category
+### 📌Unique customers per product category
 
 ```sql
 SELECT category, COUNT(DISTINCT customer_id) AS Unique_Customers
@@ -142,7 +142,7 @@ FROM retail_sales
 GROUP BY category;
 ```
 
-### 📌 Q10: Number of orders by time-of-day shift
+### 📌Number of orders by time-of-day shift
 
 ```sql
 WITH Hourly_Sale AS (
